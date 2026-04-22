@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>overflow</title>
+  <style>
+    *{margin:0; padding:0;}
+    /* 
+    요소(태그) 크기결정 -> boxmodel 
+    boxmodel
+    <태그>내용<태그>내용</태그></태그>
+      1. block   : 
+        줄바꿈  
+        너비와 높이를 지정
+        너비는 부모의 콘텐츠영역만큼 사용
+        너비는 부모로부터 오고 높이는 자식
+      2. inline  :
+        줄바꿈x
+        너비는 내용만큼
+        너비와 높이를 지정x
+      3. inline-block
+        줄바꿈x
+        너비와 높이를 지정
+    */
+    /* 
+    요소크기 계산법
+    - 수평크기
+   바깥왼쪽여백 + 왼쪽테두리 + 안쪽왼쪽여백 + content + 안쪽오른쪽여백 + 오른쪽 테두리 + 바깥오른쪽여백
+    -수직 크기
+     바깥상단여백 + 상단테두리 + 안쪽상단여백 + content + 안쪽하단여백 + 하단 테두리 + 바깥하단여백
+    */
+
+    .box{
+      background-color: #ccc;
+      /* 
+      width/height를 어느영역까지를 포함할 지 결정
+      box-sizing
+        box-sizing: content-box; 기본값
+            content
+        box-sizing: border-box;
+            왼쪽테두리 + 안쪽왼쪽여백 + content + 안쪽오른쪽여백 + 오른쪽 테두리
+      */
+      width:300px;
+      height:150px;
+      /* 안쪽여백 상하좌우 모두 20px */
+      padding:20px;
+      /* padding을 지정해도 .box요소의 크기변화x */
+      box-sizing: border-box;
+    }
+    /* ----- */
+    body{margin: 50px;}
+    
+  </style>
+</head>
+<body>
+  <!-- .box -->
+  <div class="box">연습</div>
+  <!-- 오후수업 -->
+   <!-- .overflow-exam -->
+   <div class="overflow-exam">
+    <h1>자식의크기가 부모의 크기보다 클때</h1>
+
+
+    <!-- .box.box$*4>lorem15 -->
+    <div class="box box1">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Blanditiis ipsam minima distinctio numquam nam quis.</div>
+    <div class="box box2">Fugit officia sequi quas quisquam facere voluptas velit. Voluptas necessitatibus magni facilis libero ab error.</div>
+    <div class="box box3">Consectetur recusandae a dolorem veniam. Dolore nemo adipisci fugit tenetur odio magnam eius. Velit, quaerat!</div>
+    <div class="box box4">Quia sapiente fugiat obcaecati repellendus incidunt impedit iusto rerum, at laudantium nesciunt labore error quasi!</div>
+    
+    <style>
+      .overflow-exam > .box{
+        height: 100px;
+        /* height: auto; */
+        border: 1px solid #000;
+        margin:50px 0 10px 0; 
+        /* 상 우 하 좌 */
+            }
+            .box1{
+              overflow: auto;
+            }
+            .box2{
+              overflow: scroll;
+            }
+            .box3{
+              overflow: visible;
+            }
+            .box4{
+              /* 부모요소보다 넘쳐나는 부분은 보이지 말아라 */
+              overflow: hidden;
+            }
+           
+        
+    </style>
+    <div class="box box5">
+      <img src="../html/asset/logo.png" alt="">
+    </div>
+    <style>
+      .box5{
+        overflow-y: hidden;
+      }
+    </style>
+
+
+
+   </div>
+</body>
+</html>
