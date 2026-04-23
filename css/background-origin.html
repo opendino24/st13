@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>background-origin</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      .box {
+        height: 300px;
+        border: 10px dashed rgba(255, 102, 0, 0.5);
+        background-color: #ff3;
+        font-size: 2em;
+        text-align: left;
+        color: #f0f;
+        padding: 50px;
+        margin-bottom: 20px;
+
+        background-image: url(images/frame.png);
+        background-repeat: no-repeat;
+        
+       
+      }
+
+      /* 
+      background-position:을 지정하지 않고(0 0;)
+      배경의 기준이 될 위치를 지정
+      배경이미지의 기본 요소의 왼쪽 위 가 기본값
+      */
+      .box1 {
+        width: 500px;
+        background-origin: padding-box;
+        
+      }
+      .box2 {
+        width: 80%;
+        background-origin: padding-box;
+        
+      }
+      .box3 {
+        width: 10em;
+        background-origin: content-box;
+       
+       
+      }
+      .box4 {
+        width: auto;
+       
+      }
+        
+    </style>
+  </head>
+  <body>
+    <!-- .cotainer-wrap>.box.box$*3>{box$} -->
+    <div class="cotainer-wrap">
+      <div class="box box1">box1 Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat id, quasi nulla accusamus voluptate eius provident cum vel beatae tempora.</div>
+      <div class="box box2">box2 Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus possimus, odio soluta omnis corrupti repellat voluptatum animi assumenda ipsam! Dolores.</div>
+      <div class="box box3">box3 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt aspernatur, quam eum itaque temporibus consequatur vitae obcaecati alias esse quis. </div>
+      <div class="box box4">box4 Lorem ipsum, dolor sit amet consectetur adipisicing elit. Exercitationem similique perferendis ex possimus. Autem itaque quo tempore obcaecati, corrupti et.</div>
+    </div>
+  </body>
+</html>
