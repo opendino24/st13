@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>가상요소 before after</title>
+  <style>
+    /* reset */
+    *{margin:0; padding:0;}
+    h1,h2,h3{font-size: 1.5em;}
+    hr{display: none;}
+
+    /* 브라우저 전체에 배경색이 있지만 내용은 가운데 정렬 */
+    .box{
+      margin-top:100px;
+      padding:20px 0;
+    }
+    .box1{background-color: #f68;}
+    .box2{background-color: #6f8;}
+    .box3{background-color: #86f;}
+    .box::before{
+      /* content: "앞"; */
+      content: "";
+      display: block;
+      background-color: #000;
+      width:3em; height:4px;
+      margin:auto;
+      margin-top:-70px;/*position*/
+    }
+
+
+    /* .box::after{content: "뒤";} */
+
+    .box .inner{
+      width:80%;
+      /* 블록레벨을 부모의 가운데 정렬 */
+      margin:0 auto;
+      margin-top:70px;
+    }
+    .box .inner::before{
+      /* 
+      ::before, ::after 가사요소 인라인레벨
+      브라우저에  ::before, ::after  반드시 content속성을 지정
+      */
+      /* content:"제목"; */
+      content:""; /*빈내용*/
+      display: block;
+      font-weight: bold;
+      font-size: 1.2em;
+      padding-bottom:1em;
+      background-color: #ccc;
+
+    }
+    /* .box .inner::after{content:"뒤";} */
+
+    .box .content::before{content:'앞 ';}
+    .box .content::after{content:' 뒤 ';}
+  </style>
+</head>
+<body>
+  <h1>가상요소 ::before ::after</h1>
+  <hr>
+  <!-- div.box.box$*3>.inner>p.content>lorem15 -->
+  <div class="box box1">
+    <hr>
+    <div class="inner">
+      <p class="content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi aliquid dolore voluptates modi laudantium sapiente.</p>
+    </div>
+  </div>
+  <div class="box box2">
+    <div class="inner">
+      <p class="content">Corrupti quasi assumenda hic, ducimus dolor odit ipsam sed sequi nihil fugit ratione maxime odio.</p>
+    </div>
+  </div>
+  <div class="box box3">
+    <div class="inner">
+      <p class="content">Nostrum ipsam consequuntur non id doloremque, ad eveniet ea temporibus, incidunt officiis ratione dicta beatae.</p>
+    </div>
+  </div>
+</body>
+</html>
