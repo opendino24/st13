@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>목록 관련 CSS</title>
+  <style>
+    *{margin:0; padding:0}
+    body{margin:30px}
+    li{background-color: #ccc;}
+    /* .exam1 ol,  .exam1 ul{ 
+      .exam1 후손 ol,  exam1 후손 ul
+    */
+    /* ol.exam1 ,  ul.exam1 {  ol중클래스 exam1 ul중클래스 exam1*/
+    ol.exam1 ,  ul.exam1 {
+      border: 1px solid #f00; 
+      padding-left:3em; /*ol,ul 블릿 글머리표를 화면에 표시되는게 문제일 때는 padding-left 확인*/
+      overflow: hidden;
+      list-style: none;/*ol, ul의 글머리표를 사용x*/
+    }
+
+  </style>
+</head>
+<body>
+  <!-- ul>li*3>{menu$} -->
+  <ul class="exam1">
+    <li>menu1</li>
+    <li>menu2</li>
+    <li>menu3</li>
+  </ul>
+  <ol class="exam1">
+    <li>menu1</li>
+    <li>menu2</li>
+    <li>menu3</li>
+  </ol>
+
+  <!-- .exam2>ol>li*3>{내용$} -->
+  <div class="exam2">
+    <ol>
+      <li>내용1</li>
+      <li>내용2</li>
+      <li>내용3</li>
+    </ol>
+       <ul>
+      <li>내용1</li>
+      <li>내용2</li>
+      <li>내용3</li>
+    </ul>
+  </div>
+  <style>
+    .exam2 ol, .exam2 ul{
+      /* 목록 태그들의 글머리표 제거 */
+      list-style: none;
+    }
+    .exam2 li{
+      padding-left: 20px;
+      /* background-image: url(images/arrow-right.png);
+      background-repeat: no-repeat;
+      background-size: 12px;
+      background-position: 0 6px; */
+
+      /*      background: #ccc url(images/bg.jpg) center bottom/cover no-repeat fixed;
+ */
+
+ /* 단추표기법을 사용시 생략된 속성은 기본값으로 설정 */
+      background: url(images/arrow-right.png) no-repeat 0 6px/12px;
+    }
+  </style>
+</body>
+</html>
