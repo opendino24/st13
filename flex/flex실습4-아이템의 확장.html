@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>flex3-flex container</title>
+  <title>flex실습4-플렉스 아이템의확장</title>
   <link rel="stylesheet" href="../reset.css">
     <!-- 
   1. flex 선언   container
@@ -28,11 +28,31 @@
     #top_nav_box .top_category{min-width:600px; max-width:700px}
     #top_nav_box .top_mypage{width:150px} */
     /* flex */
-    .inner{}
-    #top_nav_box{}
-    #top_nav_box .top_logo{}
-    #top_nav_box .top_category{}
-    #top_nav_box .top_mypage{}
+    .inner{
+      display: flex;
+      /* 2row 5nowrap  */
+    }
+    #top_nav_box{
+      /* flex 아이템 */
+      /* 3 확장0/축소1 */
+      /* 4flex-basis:auto  */
+      width:100%;
+
+      display: flex;
+      /* 2방향row 5 줄바꿈nowrap */
+      /* 7정렬 주축*/
+      /* 아이템사이만 컨텐이너의 남은 공간을 동일하게 여백으로 사용하고 싶어요 */
+      gap:20px;
+      /* justify-content: start; */
+    }
+    #top_nav_box>div{
+      /* flex item */
+      /* 3확장0, 축소1 */
+      /* 4 flex-basis:auto */
+    }
+    #top_nav_box .top_logo{ width:100px}
+    #top_nav_box .top_category{flex-grow: 1;}
+    #top_nav_box .top_mypage{width:150px}
   </style>
 </head>
 <body>

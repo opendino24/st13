@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>flex3-flex container</title>
+  <title>flex실습6 column 방향과 postion</title>
   <link rel="stylesheet" href="../reset.css">
     <!-- 
   1. flex 선언   container
@@ -23,16 +23,32 @@
     #top_nav_box .top_category{background-color: dodgerblue;}
     #top_nav_box .top_mypage{background-color: purple;}
 
-    /* 크기 */
-    /* #top_nav_box .top_logo{ width:100px}
-    #top_nav_box .top_category{min-width:600px; max-width:700px}
-    #top_nav_box .top_mypage{width:150px} */
+   
     /* flex */
     .inner{}
-    #top_nav_box{}
-    #top_nav_box .top_logo{}
-    #top_nav_box .top_category{}
-    #top_nav_box .top_mypage{}
+    #top_nav_box{
+      display: flex;
+      /* 2 */
+      flex-direction: column;
+      /*,5norwp */
+      /* 6 */
+      /* 정렬 */
+      /* 주축 ↓  교차축 →*/
+      /* justify-content: flex-start; */
+      align-items: center;
+      /* 기준요소 #top_nav_box .top_mypage{ */
+      position: relative;
+    }
+    /* 3확장0/축소1 */
+    /* 4flex-basis:auto */
+    #top_nav_box .top_logo{ width:100px}
+    #top_nav_box .top_category{min-width:600px; max-width:700px}
+    #top_nav_box .top_mypage{
+      width:150px;
+      position:absolute;
+      right: 0;
+      bottom: 0;
+    }
   </style>
 </head>
 <body>
