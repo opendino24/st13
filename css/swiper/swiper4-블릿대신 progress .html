@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>swiper기본</title>
+  <title>swiper4-블릿대신 progress </title>
   <link rel="stylesheet" href="../reset.css">
   <!-- swiperjs css -->
 <link
@@ -29,7 +29,7 @@
     <div class="swiper-slide">Slide 1</div>
     <div class="swiper-slide">Slide 2</div>
     <div class="swiper-slide">Slide 3</div>
-    ...
+  
   </div>
   <!-- If we need pagination -->
   <div class="swiper-pagination"></div>
@@ -39,7 +39,8 @@
   <div class="swiper-button-next"></div>
 
   <!-- If we need scrollbar -->
-  <div class="swiper-scrollbar"></div>
+   <!-- 만약 pagination을 progressbar로 할경우 스크롤에 해당되는 요소제거 -->
+  <!-- <div class="swiper-scrollbar"></div> -->
 </div>
 <!-- swiper 실행 -->
 <script>
@@ -51,6 +52,7 @@
   // If we need pagination
   pagination: {
     el: '.swiper-pagination',
+    type:'progressbar',
     clickable :true,
   },
 
@@ -60,10 +62,7 @@
     prevEl: '.swiper-button-prev',
   },
 
-  // And if we need scrollbar
-  scrollbar: {
-    el: '.swiper-scrollbar',
-  },
+ 
 });
 </script>
 </body>
