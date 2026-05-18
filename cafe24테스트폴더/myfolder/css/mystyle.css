@@ -19,6 +19,9 @@
 /* 단배너 CSS */
 /* 단배너 공통 */
 .dan-section{}
+.dan-section .flex > .item{
+  flex:auto;
+}
 
 .dan-section .item {
   /* flex:none; */
