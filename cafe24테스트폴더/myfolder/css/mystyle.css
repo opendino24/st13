@@ -1,16 +1,16 @@
 /* 테스트후 삭제 */
 @import url(ub-variables.css);
 .card{
-  background-color: #cff;
+  /* background-color: #cff;
   box-sizing: border-box;
   border:var(--border);
   min-height: 300px;
-  opacity: 0.5;
+  opacity: 0.5; */
 }
 .dan-section .flex {
-  background-color: #f00;
+  /* background-color: #f00;
   box-sizing: border-box;
-  border: 1px solid #000;
+  border: 1px solid #000; */
 }
 /* 공통 */
 
@@ -19,12 +19,66 @@
 /* 단배너 CSS */
 /* 단배너 공통 */
 .dan-section{}
+.dan-section .flex > .item{
+  flex:auto;
+}
 
 .dan-section .item {
   /* flex:none; */
-
- 
 }
+
+/* 
+단 썸네일의 크기가 달라지는 문제때문에 padding값 수정 문제 발생
+*/
+/* .dan-section .item:first-child{padding-left:0;}  
+.dan-section .item:last-child{padding-right: 0;} */
+/* html의 flex 컨테이너에게 .gap- 으로 지정하세요  */
+.dan-section .flex .item[class*="col-"]{
+  padding-left:0 ;
+  padding-right: 0;
+}
+
 .dan-section .item .thumb {}
+.dan-section .item .thumb .xans-smart-banner-admin{
+  margin-bottom: 0;
+}
+
 .dan-section .item .thumb img{}
 .dan-section .item .desc {}
+
+/* 1024 이하에서 
+1. dan-section  일렬로 표시되고 
+   문제1 브라우저크기가 줄어들면 줄어드는 이미지 크기
+
+2. 화면에 모바일 1.2개  col-md-10  html추가
+   태블레서 1.8개  col-lg-7   html 추가
+3. 부드러운 스크롤링
+   문제 1 스크롤바 표시
+   문제 2 css로 부드러운 스크롤링
+*/
+@media (max-width:1024px){
+  /* .dan-section */
+  .dan-section .flex{
+    width:100%;
+    /* 3 문제1 */
+    /* 부드러운 스크롤링을 위한 전제 조건 */
+    overflow-x: auto;
+
+    /* 3 문제2*/
+    /* 3 문제2 부드러운 스크롤링 css */
+    scroll-behavior: smooth;
+    /* 3 문제2 스크롤될 때 요소가 snap 타입  */
+    scroll-snap-type: x mandatory;
+  }
+  .dan-section .flex .item{
+    /* 1 문제1 해결 */
+    flex-shrink: 0;
+    /* 3 문제2 컨테이너와 아이템의 스크롤 snap 정렬 */
+    scroll-snap-align: center;
+  }
+}
+
+
+@media (max-width:768px){
+
+}
