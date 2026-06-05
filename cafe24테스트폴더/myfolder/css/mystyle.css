@@ -111,17 +111,132 @@ input, select, textarea, body, code, button {
   display: flex;
 }
 
+/* .tab-direction-row */
 #contents .ub-style.main_product_category.tab-direction-row{
   flex-direction: row;
 }
-#contents .ub-style.main_product_category.tab-direction-column{
+
+.ub-style.main_product_category.tab-direction-row  .main_product_inner{
+  display: flex;
   flex-direction: column;
+  align-items: start;
+}
+.ub-style.main_product_category.tab-direction-row.tabmenu-1col  .main_product_inner{
+  width:var(----tab-row-tabmenu-1col-width,18%);
+}
+.ub-style.main_product_category.tab-direction-row.tabmenu-2col  .main_product_inner{
+width:var(----tab-row-tabmenu-2col-width,24%);
+}
+.ub-style.main_product_category.tab-direction-row .main_title{
+  display: block;
+  margin-bottom: var(--tab-row-main-title-margin-bottom,16px);
+}
+.ub-style.main_product_category.tab-direction-row  .main_title .main_title_txt02{
+  margin-left:var( --tab-row-main-title-txt02-margin-left, 0px);
+  margin-top:var( --tab-row-main_title-txt02-margin-top, 8px);
+}
+.ub-style.main_product_category.tab-direction-row   .main_product_tab{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-top:var(--tab-row-tabmenu-margin-top,0px);
+  width: 100%;
+}
+.ub-style.main_product_category.tab-direction-row.tabmenu-2col   .main_product_tab li{
+  width: 50%;
+  margin-bottom:calc(var(--tab-row-tabmenu-item-margin-bottomt, 16px) * 2 );
+  margin-right: 0;;
+}
+.ub-style.main_product_category.tab-direction-row  .main_product_tab li{
+  margin-left:var(--tab-row-tabmenu-item-margin-left, 0px);
+  margin-bottom:var(--tab-row-tabmenu-item-margin-bottomt, 16px);
+  width:100%;
+}
+.ub-style.main_product_category.tab-direction-row  .main_product_tab li.active{
+  background-color: var(--tab-row-tabmenu-item-active-bgc, transparent);
+}
+
+.ub-style.main_product_category.tab-direction-row.box  .main_product_tab li .button{
+   width:100%;
+   display: block;
+   text-align: left;
+}
+.ub-style.main_product_category.tab-direction-row  .main_product_tab li .button.active{
+    background-color: var(--tab-row-tabmenu-item-active-bgc, transparent);
+}
+.ub-style.main_product_category.tab-direction-row.tabmenu-1col  .content_list{
+  width:var(--tab-row-tabmenu-1col-content-list-width, 82%);
+  flex-grow: 1;
+}
+
+.ub-style.main_product_category.tab-direction-row.tabmenu-2col .content_list{
+  width:var( --tab-row-tabmenu-2col-content-list-width,76%);
+  flex-grow: 1;
+  display:flex;
+  flex-direction: row;
+  flex-wrap: wrap;
 }
 
 
 
-/*main_title(섹션타이틀) , main_product_tab(탭메뉴버튼) 의 컨테이너 */
-.ub-style.main_product_category .main_product_inner{}
+/*.tab-direction-column  */
+#contents .ub-style.main_product_category.tab-direction-column{
+  flex-direction: column;
+}
+.ub-style.main_product_category.tab-direction-column .main_product_tab li{
+  width:auto;
+  margin-left:16px;
+}
+.ub-style.main_product_category.tab-direction-column.main_product_inner_nowrap .main_product_inner{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width:100%;
+}
+.ub-style.main_product_category.tab-direction-column.main_product_inner_nowrap  .main_title{
+  display: flex;
+  text-align: left;
+  justify-content: flex-start;
+  align-items: flex-end;
+}
+.ub-style.main_product_category.tab-direction-column.main_product_inner_nowrap .main_product_tab{
+  display: flex;
+}
+
+.ub-style.main_product_category.tab-direction-column.main_product_inner_nowrap  .main_title_txt01{
+  margin-bottom: 0;
+   margin-right:0;
+}
+.ub-style.main_product_category.tab-direction-column.main_product_inner_nowrap  .main_title_txt02{
+  margin-bottom: 0;
+   margin-left:16px;
+}
+
+.ub-style.main_product_category.tab-direction-column.main_product_inner_wrap .main_product_inner{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width:100%;
+}
+.ub-style.main_product_category.tab-direction-column.main_product_inner_wrap  .main_title{
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  align-items:center;
+  margin-bottom:var(  --tab-column-main-title-margin-bottom,40px);
+}
+
+.ub-style.main_product_category.tab-direction-column.main_product_inner_wrap  .main_title_txt02{
+  margin-top: var(--tab-column-main-title-txt02-margin-top,8px);
+   margin-left:0;
+}
+
+
+
+
 .ub-style.main_product_category .main_product_inner .main_title{}
 .ub-style.main_product_category .main_product_inner .main_title .main_title_txt01{}
 .ub-style.main_product_category .main_product_inner .main_title .main_title_txt02{}
@@ -129,6 +244,7 @@ input, select, textarea, body, code, button {
 .ub-style.main_product_category .main_product_inner .main_product_tab li{}
 .ub-style.main_product_category .main_product_inner .main_product_tab li .button{}
 /* 선택된 메뉴 */
+.ub-style.main_product_category .main_product_inner .main_product_tab li.active .button{}
 .ub-style.main_product_category .main_product_inner .main_product_tab li .button.active{}
 
 /* 탭UI의 탭컨텐츠 컨테이너 */
