@@ -3,25 +3,21 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>  유동적타이포그래픽</title>
-<!-- 웹폰트 
- HTML의 <head> 태그 안에 코드를 삽입하세요.-->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <title>유동적 타이포그래피</title>
+  <!-- 웹폰트 -->
+ <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
-
-
 <!-- 
-Noto Sans KR: 가변 스타일을 위한 CSS 클래스
+
 .noto-sans-kr-<uniquifier> {
   font-family: "Noto Sans KR", sans-serif;
   font-optical-sizing: auto;
   font-weight: <weight>;
   font-style: normal;
 }
-  -->
-
-  <style>
+ -->
+<style>
   *{margin: 0; padding:0;}
   body{margin:50px;}
 
@@ -31,8 +27,7 @@ Noto Sans KR: 가변 스타일을 위한 CSS 클래스
     font-optical-sizing: auto;
     color:#333;
   }
-
-  .sample1{
+ .sample1{
     font-size:2rem;
     font-weight: 700;
   }
@@ -42,43 +37,44 @@ Noto Sans KR: 가변 스타일을 위한 CSS 클래스
     font-size:1.5rem;
   }
   }
-  :root{
-    --min-font:13;
-    --max-font:18;
-    --min-font-section-title:32;
-    --max-font-section-title:18;
-    --min-width:768;
-    --max-width:1760;
-  }
 
-/* 
- 
-.text {
+
+  /* 
+  .text {
   font-size: clamp(
     calc(var(--min-font) * 1px),
     calc(
-      var(--min-font) * 1px +
-      (var(--max-font) - var(--min-font)) *
+      var(--min-font) * 1px + 
+      (var(--max-font) - var(--min-font)) * 
       ((100vw - var(--min-width) * 1px) / (var(--max-width) - var(--min-width)))
     ),
     calc(var(--max-font) * 1px)
   );
 }
-*/
+  
+  */
+  :root{
+    --min-font:13;
+    --max-font:18;
+    --min-font-section-title:18;
+    --max-font-section-title:32;
+    --min-width:768;
+    --max-width:1760;
+  }
 
-    .sample2{
-   font-size: clamp(
-    calc(var(--min-font-section-title) * 1px),
+  .sample2{
+  font-size: clamp(
+    calc(var(--min-font-section-title) * 1px ),
     calc(
-      var(--min-font-section-title) * 1px + 
-      (var(--max-font-section-title) - var(--min-font-section-title)) * 
+       var(--min-font-section-title) * 1px +
+      (var(--max-font-section-title) - (var(--min-font-section-title) )) *
       ((100vw - var(--min-width) * 1px) / (var(--max-width) - var(--min-width)))
     ),
     calc(var(--max-font-section-title) * 1px)
-  );
-  }
+   );
+}
 
-
+    
 
 </style>
 </head>
